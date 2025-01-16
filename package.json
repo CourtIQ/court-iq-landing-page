@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist --remove '!(CNAME)'"
   },
   "dependencies": {
     "lucide-react": "^0.471.1",
