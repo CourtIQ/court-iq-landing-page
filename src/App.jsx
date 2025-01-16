@@ -10,14 +10,6 @@ export default function App() {
   // Google Forms URL
   const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdq-VSTfs2KmeLeF1L4Aftv_JaRfHrGCiGOZ1icZHYjsteBHg/formResponse';
   const GOOGLE_FORM_EMAIL_ID = 'entry.75332481';
-  
-  useEffect(() => {
-    // Check if we're on the apex domain
-    if (window.location.hostname === 'court-iq.com') {
-      // Redirect to www
-      window.location.href = `https://www.court-iq.com${window.location.pathname}${window.location.search}`;
-    }
-  }, []);
 
   useEffect(() => {
     if (localStorage.theme === 'dark' || 
