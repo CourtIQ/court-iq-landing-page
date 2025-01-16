@@ -2,9 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Court IQ - Coming Soon</title>
+    <title>CourtIQ - Coming Soon</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -38,6 +37,22 @@
           }
         }
       }
+
+      function setFavicon(isDark) {
+        const favicon = document.querySelector("link[rel~='icon']");
+        if (favicon) {
+          favicon.href = isDark ? '/dark-logo.png' : '/light-logo.png';
+        }
+      }
+
+      // Check initial color scheme
+      const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setFavicon(isDarkMode);
+
+      // Listen for changes in color scheme
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        setFavicon(e.matches);
+      });
     </script>
   </head>
   <body>
